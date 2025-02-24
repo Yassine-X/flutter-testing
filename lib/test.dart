@@ -20,7 +20,7 @@ void main() {
     } else if (n9ita < 0 || n9ita > 20) {
       print("Invalid note. Please enter a value between 0 and 20.");
     } else {
-      break;
+      break;  
     }
   }
 

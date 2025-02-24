@@ -1,60 +1,27 @@
 import 'package:flutter/material.dart';
 
-class Test extends StatefulWidget {
-  const Test({super.key});
+class Myapp extends StatefulWidget {
+  const Myapp({super.key});
 
   @override
-  State<Test> createState() => _TestState();
+  State<Myapp> createState() => _MyappState();
 }
 
-class _TestState extends State<Test> {
+class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 85, 20, 150),
-          centerTitle: true,
-          title: const Text(
-            "Students Manager",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        body: const Row(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SimpleTextField(hintText: "Name",),
-            SimpleTextField(hintText: "Age", textInputType: TextInputType.number,),
-            SimpleTextField(hintText: "Branch",),
+            IconButton(
+              onPressed: () {
+                print("ttttttt");
+              },
+            icon: Icon(Icons.add)),
+            Text('try to press the button'),
           ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Color.fromARGB(255, 152, 205, 17),
-          onPressed: () {},
-          child: const Icon(Icons.add),
-        ));
-  }
-}
-
-class SimpleTextField extends StatelessWidget {
- 
-  final TextInputType? textInputType;
-  final String? hintText;
-  const SimpleTextField({
-    this.textInputType,
-    required this.hintText,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: TextField(
-        keyboardType: textInputType,
-        decoration: InputDecoration(
-          hintText: hintText,
         ),
       ),
     );
